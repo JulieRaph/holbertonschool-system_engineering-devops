@@ -1,6 +1,6 @@
 # 🌐 Web Infrastructure Design for www.foobar.com
 
-## 📊 Architecture Diagram (Text Format)
+## 📊 Architecture Diagram
 
                              +---------------------+
                              |     Web Browser     |
