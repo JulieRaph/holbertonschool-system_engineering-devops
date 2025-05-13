@@ -13,30 +13,30 @@ The architecture meets the following production-readiness requirements:
 
 ## Infrastructure Design Overview
 
-[ User's Browser ]
-        |
-     HTTPS (port 443)
-        |
-   +------------------+
-   |  HAProxy (LB)    | ← SSL Certificate + Monitoring
-   +------------------+
-        |         |
-        v         v
-+----------------+  +----------------+
-| Firewall Srv 1 |  | Firewall Srv 2 |
-+----------------+  +----------------+
-       |                    |
-       v                    v
-+----------------+   +----------------+
-|   Server 1     |   |   Server 2     |
-| - Nginx        |   | - Nginx        |
-| - App Server   |   | - App Server   |
-| - Codebase     |   | - Codebase     |
-| - MySQL (P)    |   | - MySQL (R)    |
-| - Monitoring   |   | - Monitoring   |
-+----------------+   +----------------+
-       ↘                ↙
-   MySQL Replication (Primary ➝ Replica)
+        [ User's Browser ]
+                |
+             HTTPS (port 443)
+                |
+           +------------------+
+           |  HAProxy (LB)    | ← SSL Certificate + Monitoring
+           +------------------+
+                |         |
+                v         v
+        +----------------+  +----------------+
+        | Firewall Srv 1 |  | Firewall Srv 2 |
+        +----------------+  +----------------+
+               |                    |
+               v                    v
+        +----------------+   +----------------+
+        |   Server 1     |   |   Server 2     |
+        | - Nginx        |   | - Nginx        |
+        | - App Server   |   | - App Server   |
+        | - Codebase     |   | - Codebase     |
+        | - MySQL (P)    |   | - MySQL (R)    |
+        | - Monitoring   |   | - Monitoring   |
+        +----------------+   +----------------+
+               ↘                ↙
+           MySQL Replication (Primary ➝ Replica)
 
 
 ---
