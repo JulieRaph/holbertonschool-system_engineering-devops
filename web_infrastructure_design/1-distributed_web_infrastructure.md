@@ -1,6 +1,6 @@
-# 🌐 Web Infrastructure Design for www.foobar.com
+# Web Infrastructure Design for www.foobar.com
 
-## 📊 Architecture Diagram
+## Architecture Diagram
 
                              +---------------------+
                              |     Web Browser     |
@@ -37,7 +37,7 @@
 
 ---
 
-## 🔍 Component Descriptions
+## Component Descriptions
 
 ### 🔹 Load Balancer (HAProxy)
 
@@ -78,21 +78,21 @@ Each of the two servers includes:
 
 ## ⚠️ Infrastructure Issues & Limitations
 
-### ❌ Single Points of Failure (SPOFs)
+### Single Points of Failure (SPOFs)
 
 - **HAProxy**:
   - If the load balancer fails, the entire website becomes inaccessible.
 - **Primary Database**:
   - If it goes down, all write operations are blocked.
 
-### 🔐 Security Concerns
+### Security Concerns
 
 - **No firewall**:
   - Open access to services can be exploited.
 - **No HTTPS**:
   - HTTP traffic is unencrypted and can be intercepted by attackers.
 
-### 📉 No Monitoring
+### No Monitoring
 
 - There is no system in place to monitor server health, performance, or downtime.
 - Failures may go unnoticed until reported by users.
