@@ -1,4 +1,4 @@
-# 🏗️ Secure & Monitored Web Infrastructure – foobar.com
+# Secure & Monitored Web Infrastructure – foobar.com
 
 This repository presents a basic **3-server web infrastructure** designed to host the website `www.foobar.com`.  
 The architecture meets the following production-readiness requirements:
@@ -11,7 +11,7 @@ The architecture meets the following production-readiness requirements:
 ---
 
 
-## 📐 Infrastructure Design Overview
+## Infrastructure Design Overview
 
 [ User's Browser ]
         |
@@ -42,19 +42,19 @@ The architecture meets the following production-readiness requirements:
 ---
 
 
-## ✅ Components & Their Purpose
+## Components & Their Purpose
 
-### 🔐 **1. SSL Certificate**
+### **1. SSL Certificate**
 
 - Installed on HAProxy to serve the website via **HTTPS**.
 - Ensures **secure and encrypted** communication between the client and the server.
 
-### 🔥 **2. Firewalls (3 total)**
+### **2. Firewalls (3 total)**
 
 - Each server and the load balancer are protected by a firewall.
 - Filters inbound/outbound traffic, allowing only required ports.
 
-### 📊 **3. Monitoring Clients**
+### **3. Monitoring Clients**
 
 - One agent per server (HAProxy + Server 1 + Server 2).
 - Sends metrics and logs to a monitoring platform (**Sumologic**).
@@ -67,7 +67,7 @@ The architecture meets the following production-readiness requirements:
 
 ---
 
-## 🧠 Key Explanations
+## Key Explanations
 
 ### 🔹 Why HTTPS?
 
@@ -104,17 +104,17 @@ The architecture meets the following production-readiness requirements:
 
 ## ⚠️ Limitations & Risks of This Infrastructure
 
-### 🚨 1. SSL Termination at the Load Balancer
+### 1. SSL Termination at the Load Balancer
 
 - After the HAProxy decrypts the traffic, communication between HAProxy ➝ web servers is **unencrypted**.
 - Possible man-in-the-middle risks within internal network.
 
-### 🚨 2. Single Writable MySQL Server
+### 2. Single Writable MySQL Server
 
 - Only Server 1 can handle **write** operations.
 - If it fails, write functionality is lost unless a manual failover is performed.
 
-### 🚨 3. Identical Components on Both Servers
+### 3. Identical Components on Both Servers
 
 - Both servers contain **Web + App + DB**, which:
   - Is not optimal for **scaling** each layer independently.
@@ -125,7 +125,7 @@ The architecture meets the following production-readiness requirements:
 ---
 
 
-## 📌 Summary
+## Summary
 
 This infrastructure is a good **starting point** for a small-to-medium production website:
 
