@@ -18,36 +18,36 @@ All traffic to www.foobar.com is served over HTTPS via an SSL certificate config
 
 ## Architecture (Text Diagram)
 
-    User Request (HTTPS)
-            |
-    +----------------------+
-    | Load Balancer #1     |
-    | (HAProxy + SSL cert) |
-    +----------------------+
-            |
-   (High availability cluster)
-            |
-   +----------------------+
-   | Load Balancer #2     |
-   | (HAProxy + SSL cert) |
-   +----------------------+
-            |
-     Load balancing logic
-            |
-      +-------------+
-      |             |
-+-------------+  +-------------+
-| Web Server  |  | Web Server  |
-| (Nginx)     |  | (Nginx)     |
-+-------------+  +-------------+
-      |             |
-      +-------------+
-            |
-     Application Server
-       (Business Logic)
-            |
-     Database Server
-         (MySQL)
+        User Request (HTTPS)
+                |
+        +----------------------+
+        | Load Balancer #1     |
+        | (HAProxy + SSL cert) |
+        +----------------------+
+                |
+       (High availability cluster)
+                |
+        +----------------------+
+       | Load Balancer #2     |
+       | (HAProxy + SSL cert) |
+       +----------------------+
+                |
+         Load balancing logic
+                |
+          +-------------+
+          |             |
+    +-------------+  +-------------+
+    | Web Server  |  | Web Server  |
+    | (Nginx)     |  | (Nginx)     |
+    +-------------+  +-------------+
+          |             |
+          +-------------+
+                |
+         Application Server
+           (Business Logic)
+                |
+         Database Server
+             (MySQL)
 
 
 ## Explanation of Each Element
