@@ -136,4 +136,4 @@ This infrastructure is a good **starting point** for a small-to-medium productio
 
 ---
 
-> ✍️ *This design is part of a systems architecture exercise to demonstrate understanding of modern web hosting, security, and monitoring concepts.*
+> *This design is part of a systems architecture exercise to demonstrate understanding of modern web hosting, security, and monitoring concepts.*
